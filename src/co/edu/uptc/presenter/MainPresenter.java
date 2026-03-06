@@ -61,11 +61,11 @@ public class MainPresenter implements PresenterInterface {
     }
 
     @Override
-    public void calculateSize(String path){
+    public void calculateSize(){
         try{
-            long size = model.calculateSize(path);
+            long size = model.calculateSize(initialPath);
 
-            if (size == -1) {
+            if (size == 0) {
                 view.showError("La ruta no existe.");
             } else {
                 view.showMessage("El tamaño es: " + size + " bytes");

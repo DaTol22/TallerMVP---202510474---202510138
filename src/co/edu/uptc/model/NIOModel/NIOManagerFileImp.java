@@ -77,11 +77,8 @@ public class NIOManagerFileImp implements ModelInterface{
     public long calculateSize(String initialPath) throws IOException{
         Path path = Paths.get(initialPath);
 
-        if(!Files.exists(path)){
-            return -1;
-        }
         NIOCalculateSize nioCalculateSize = new NIOCalculateSize();
-        return nioCalculateSize.calculateSizeRecursive(path);
+        return nioCalculateSize.calcDirectorySize(path);
     }
 
     @Override

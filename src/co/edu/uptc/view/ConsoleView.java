@@ -68,9 +68,7 @@ public class ConsoleView implements ViewInterface {
     }
 
     private void calculateSize() {
-        SearchCli searchCli = new SearchCli();
-        String path = searchCli.showRequest();
-        presenter.calculateSize(path);
+        presenter.calculateSize();
     }
 
     public void showList(List<String> totalList){

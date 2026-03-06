@@ -9,7 +9,7 @@ public interface PresenterInterface {
 
     public void listDirectory();
     public void searchFile(String name);
-    public void calculateSize(String path);
+    public void calculateSize();
     public void deleteFile(String name);
     public void start(String initialPath);
 }
