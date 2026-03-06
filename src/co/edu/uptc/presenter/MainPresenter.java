@@ -4,6 +4,7 @@ import co.edu.uptc.interfaces.ModelInterface;
 import co.edu.uptc.interfaces.PresenterInterface;
 import co.edu.uptc.interfaces.ViewInterface;
 
+import java.io.IOException;
 import java.util.List;
 
 public class MainPresenter implements PresenterInterface {
@@ -60,13 +61,18 @@ public class MainPresenter implements PresenterInterface {
     }
 
     @Override
-    public void calculateSize(String path) {
-        long size = model.calculateSize(path);
+    public void calculateSize(String path){
+        try{
+            long size = model.calculateSize(path);
 
-        if (size == -1) {
-            view.showError("La ruta no existe.");
-        } else {
-            view.showMessage("El tamaño es: " + size + " bytes");
+            if (size == -1) {
+                view.showError("La ruta no existe.");
+            } else {
+                view.showMessage("El tamaño es: " + size + " bytes");
+            }
+        }
+        catch(IOException e){
+            view.showError(e.getMessage());
         }
     }
 

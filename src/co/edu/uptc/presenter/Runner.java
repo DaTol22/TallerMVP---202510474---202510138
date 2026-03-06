@@ -5,6 +5,7 @@ import co.edu.uptc.interfaces.PresenterInterface;
 import co.edu.uptc.interfaces.ViewInterface;
 
 import co.edu.uptc.model.ManagerFileImp;
+import co.edu.uptc.model.NIOModel.NIOManagerFileImp;
 import co.edu.uptc.view.ConsoleView;
 
 import java.io.FileNotFoundException;
@@ -16,7 +17,7 @@ public class Runner {
 
     private void makeMVP(){
         presenter = new MainPresenter();
-        model = new ManagerFileImp();
+        model = new NIOManagerFileImp();
         view =  ConsoleView.getInstance();
 
         presenter.setModel(model);
