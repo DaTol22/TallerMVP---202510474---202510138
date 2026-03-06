@@ -2,6 +2,7 @@ package co.edu.uptc.interfaces;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 public interface ModelInterface {
@@ -14,6 +15,6 @@ public interface ModelInterface {
 
     List<String> listDirectory ();
     String searchFile(String nameToSearch);
-    long calculateSize (String path);
+    long calculateSize (String path) throws IOException;
     boolean deleteFile(String nameToSearch);
 }
